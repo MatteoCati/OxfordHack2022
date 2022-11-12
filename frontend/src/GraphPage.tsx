@@ -26,16 +26,15 @@ function GraphPage() {
          })
      }, []);
 
-    
     return (
       <div>
         <h1>This is the graph page</h1>
         {categories.map(category => {
             counter -= 1;
-            return (<CategoryButton 
-                name={category.name} 
-                roles={category.roles} 
-                rating={Math.floor(counter/2)} 
+            return (<CategoryButton
+                name={category.name}
+                roles={category.roles}
+                rating={Math.floor(counter/2)}
                 left={coordinates[counter][0]}
                 top={coordinates[counter][1]}
                 />
@@ -44,5 +43,5 @@ function GraphPage() {
       </div>
     );
   }
-  
+
   export default GraphPage;

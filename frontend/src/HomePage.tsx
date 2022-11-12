@@ -1,7 +1,7 @@
 import {FC, useEffect, useState} from "react";
 import config from "./config"
 import SkillsBlock from "./SkillsBlock";
-import {Typography, OutlinedInput, Button} from "@mui/material"
+import {Typography, OutlinedInput, Button, Box} from "@mui/material"
 import "./HomePage.css"
 import { Link } from "react-router-dom";
 
@@ -74,19 +74,30 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills}) => {
         marginTop: "20px",
         height: "50px",
         marginBottom: "10px",
+        width: "300px",
     }
 
     const headerStyle  = {
         color: config.COLORS.TEXT
     }
+
+    const containerStyle = {
+        backgroundColor: config.COLORS.BACKGROUND,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: "40px",
+    }
+
     return (
-        <div className="background">
+        <Box sx={containerStyle}>
             <Typography variant={"h1"} sx={headerStyle}>Find your Career</Typography>
             <OutlinedInput placeholder={"Search your skills"} value={search} onChange={handleSearch} sx={searchStyle}/>
             <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'}/>
             <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'}/>
             <Button variant={"contained"} component={Link} to={"/graph"} sx={buttonStyle}>Find out your career</Button>
-        </div>)
+        </Box>)
 }
 
 export default HomePage;
