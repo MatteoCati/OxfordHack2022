@@ -1,6 +1,24 @@
 
-.btn {
-    width: 20em;
-    height: 20em;
-    background-color: black;
+.btn-small {
+    width: 12em;
+    height: 12em;
+    background-color: #d13333 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+}
+
+.btn-medium {
+    width: 15em;
+    height: 15em;
+    background-color: #4533d1 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+}
+
+.btn-large {
+    width: 21em;
+    height: 21em;
+    background-color: #33d14d !important;
+    border-radius: 50% !important;
+    position: absolute !important;
 }

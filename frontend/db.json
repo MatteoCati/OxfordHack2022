@@ -3,5 +3,100 @@
     "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "Haskell", "Machine Learning", "C#", "Sleeping", "Linux",
     "Android", "Frontend", "Backend", "Design", "SQL", "git"],
     "top_skills": ["JavaScript", "TypeScript", "Python", "Machine Learning"]
-  }
+  },
+  "categories": [
+      {
+        "name" : "tech", 
+        "percentage" : 90,
+        "roles" : [
+          {
+            "name": "software developer", 
+            "percentage" : 90
+          },
+          {
+            "name": "cybersecurity", 
+            "percentage" : 80
+          },
+          {
+            "name": "IT support", 
+            "percentage" : 70
+          },
+          {
+            "name": "data analyst", 
+            "percentage" : 75
+          }
+        ]
+      },
+      {
+        "name" : "healthcare", 
+        "percentage": 70,
+        "roles" : [
+          {
+            "name": "doctor", 
+            "percentage" : 70
+          },
+          {
+            "name": "nurse", 
+            "percentage" : 60
+          }
+        ]
+      },
+      {
+        "name" : "healthcare", 
+        "percentage": 70,
+        "roles" : [
+          {
+            "name": "doctor", 
+            "percentage" : 70
+          },
+          {
+            "name": "nurse", 
+            "percentage" : 60
+          }
+        ]
+      },
+      {
+        "name" : "healthcare", 
+        "percentage": 70,
+        "roles" : [
+          {
+            "name": "doctor", 
+            "percentage" : 70
+          },
+          {
+            "name": "nurse", 
+            "percentage" : 60
+          }
+        ]
+      },
+      {
+        "name" : "healthcare", 
+        "percentage": 70,
+        "roles" : [
+          {
+            "name": "doctor", 
+            "percentage" : 70
+          },
+          {
+            "name": "nurse", 
+            "percentage" : 60
+          }
+        ]
+      },
+      {
+        "name" : "healthcare", 
+        "percentage": 70,
+        "roles" : [
+          {
+            "name": "doctor", 
+            "percentage" : 70
+          },
+          {
+            "name": "nurse", 
+            "percentage" : 60
+          }
+        ]
+      }
+    ]
+
 }

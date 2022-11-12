@@ -3,6 +3,7 @@ import config from "./config"
 import SkillsBlock from "./SkillsBlock";
 import {Typography, OutlinedInput, Button} from "@mui/material"
 import "./HomePage.css"
+import { Link } from "react-router-dom";
 
 interface SkillsFetch {
     top_skills: string[]
@@ -60,7 +61,9 @@ const HomePage: FC = () => {
             <OutlinedInput placeholder={"Search your skills"} value={search} onChange={handleSearch}/>
             <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} />
             <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} />
-            <Button variant={"contained"}>Find out your career</Button>
+            <Button variant={"contained"}>
+                <Link to="graph">Find out your career</Link>
+            </Button>
         </div>)
 }
 
