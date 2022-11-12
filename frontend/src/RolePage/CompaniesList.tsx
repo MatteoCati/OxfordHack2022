@@ -13,7 +13,7 @@ const CompanyCard: FC<{ company: CompanyType}> = ({company}) => {
         border: "1px solid black",
         borderRadius: "10px",
         marginBottom: "10px",
-        minWidth: "300px",
+        minWidth: "250px",
         padding: "10px"
     }
 
@@ -33,11 +33,13 @@ const CompaniesList: FC<CompaniesListProps> = ({companies}) => {
     const headerStyle = {
         color: config.COLORS.TEXT,
         marginBottom: "20px",
+        marginLeft: "5px",
+        marginRight: "5px",
     }
 
     const containerStyle = {
         width: "100%",
-        marginTop: "40px",
+        marginTop: "80px",
     }
 
     const companiesListStyle = {
