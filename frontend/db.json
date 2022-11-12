@@ -4,95 +4,121 @@
     "Android", "Frontend", "Backend", "Design", "SQL", "git"],
     "top_skills": ["JavaScript", "TypeScript", "Python", "Machine Learning"]
   },
+  "role": [
+    {
+      "id": 1,
+      "name": "Software Engineer",
+      "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "JavaScript", "Java", "TypeScript", "Python", "Rust"],
+      "graphX": ["Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022"],
+      "graphY": [100000, 200000, 400000, 800000, 720000, 700000],
+      "gender": [0.60, 0.30, 0.10],
+      "avgSalary": 175000,
+      "companies": [
+        {
+          "name": "Google",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Microsoft",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Amazon",
+          "link": "https://google.com"
+        }
+      ]
+    }
+  ]
+  },
   "categories": [
       {
-        "name" : "tech", 
+        "name" : "tech",
         "percentage" : 90,
         "roles" : [
           {
-            "name": "software developer", 
+            "name": "software developer",
             "percentage" : 90
           },
           {
-            "name": "cybersecurity", 
+            "name": "cybersecurity",
             "percentage" : 80
           },
           {
-            "name": "IT support", 
+            "name": "IT support",
             "percentage" : 70
           },
           {
-            "name": "data analyst", 
+            "name": "data analyst",
             "percentage" : 75
           }
         ]
       },
       {
-        "name" : "healthcare", 
+        "name" : "healthcare",
         "percentage": 70,
         "roles" : [
           {
-            "name": "doctor", 
+            "name": "doctor",
             "percentage" : 70
           },
           {
-            "name": "nurse", 
+            "name": "nurse",
             "percentage" : 60
           }
         ]
       },
       {
-        "name" : "healthcare", 
+        "name" : "healthcare",
         "percentage": 70,
         "roles" : [
           {
-            "name": "doctor", 
+            "name": "doctor",
             "percentage" : 70
           },
           {
-            "name": "nurse", 
+            "name": "nurse",
             "percentage" : 60
           }
         ]
       },
       {
-        "name" : "healthcare", 
+        "name" : "healthcare",
         "percentage": 70,
         "roles" : [
           {
-            "name": "doctor", 
+            "name": "doctor",
             "percentage" : 70
           },
           {
-            "name": "nurse", 
+            "name": "nurse",
             "percentage" : 60
           }
         ]
       },
       {
-        "name" : "healthcare", 
+        "name" : "healthcare",
         "percentage": 70,
         "roles" : [
           {
-            "name": "doctor", 
+            "name": "doctor",
             "percentage" : 70
           },
           {
-            "name": "nurse", 
+            "name": "nurse",
             "percentage" : 60
           }
         ]
       },
       {
-        "name" : "healthcare", 
+        "name" : "healthcare",
         "percentage": 70,
         "roles" : [
           {
-            "name": "doctor", 
+            "name": "doctor",
             "percentage" : 70
           },
           {
-            "name": "nurse", 
+            "name": "nurse",
             "percentage" : 60
           }
         ]
