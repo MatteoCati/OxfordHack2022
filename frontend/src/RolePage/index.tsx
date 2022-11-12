@@ -46,10 +46,14 @@ const  RolePage: FC<RolePageProps> = ({ selectedSkills }) => {
         return <div></div>
     }
 
+    const headerStyle = {
+        color: config.COLORS.TEXT,
+        marginBottom: "20px",
+    }
 
     return (
           <Box sx={boxStyle}>
-                <Typography variant={"h1"}>{role.name}</Typography>
+                <Typography variant={"h1"} sx={headerStyle}>{role.name}</Typography>
                 <MatchingSkills selectedSkills={selectedSkills} requiredSkills={role.skills}/>
                 <HiringGraph graphX={role.graphX} graphY={role.graphY}/>
                 <CompaniesList companies={role.companies}/>

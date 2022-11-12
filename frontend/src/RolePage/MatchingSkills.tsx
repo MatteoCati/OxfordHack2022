@@ -18,7 +18,8 @@ const SkillChip: FC<SkillChipProps> = ({skill, isMatched}) => {
         backgroundColor: isMatched ? "#46DB18" : "#E60B0F",
         mb: "10px",
         minHeight: "32px",
-        ml: "10px",
+        ml: "20px",
+        minWidth: "85px",
     }
 
     return <Chip label={skill} sx={chipStyle}/>
