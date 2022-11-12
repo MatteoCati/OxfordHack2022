@@ -33,7 +33,7 @@ const  RolePage: FC<RolePageProps> = ({ selectedSkills }) => {
     }, [])
 
     const boxStyle= {
-        backgroundColor: config.COLORS.BACKGROUND,
+
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
