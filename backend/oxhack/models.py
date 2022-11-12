@@ -19,10 +19,13 @@ class Role_skills(models.Model):
     role = models.CharField(max_length=100)
     role_id = models.IntegerField()
     skill = models.CharField(max_length=100)
-
+    
 
 class Role_companies(models.Model):
     role = models.CharField(max_length=100)
     role_id = models.IntegerField()
     company_name = models.CharField(max_length=100)
     link = models.CharField(max_length=100)
+
+class Skills(models.Model):
+    skill = skill = models.CharField(max_length=100)
