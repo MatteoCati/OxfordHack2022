@@ -2,7 +2,6 @@ import CategoryButton from './components/CategoryButton';
 import config from "./config"
 import { useEffect, useState } from "react";
 import { ICategory } from './common';
-import ReactWordcloud from 'react-wordcloud';
 
 // need a list of categories that we will get from the request and pass a category to a custom button object
 
@@ -27,26 +26,6 @@ function GraphPage() {
          })
      }, []);
 
-    const words = [
-    {
-        text: 'told',
-        value: 64,
-    },
-    {
-        text: 'mistake',
-        value: 11,
-    },
-    {
-        text: 'thought',
-        value: 16,
-    },
-    {
-        text: 'bad',
-        value: 17,
-    },
-    ]
-
-
     return (
       <div>
         <h1>This is the graph page</h1>
@@ -61,7 +40,6 @@ function GraphPage() {
                 />
             );
         })}
-        <ReactWordcloud words={words} />
       </div>
     );
   }
