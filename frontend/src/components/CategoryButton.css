@@ -5,6 +5,7 @@
     background-color: #d13333 !important;
     border-radius: 50% !important;
     position: absolute !important;
+    font-size: small;
 }
 
 .btn-medium {
@@ -21,4 +22,49 @@
     background-color: #33d14d !important;
     border-radius: 50% !important;
     position: absolute !important;
+}
+
+.role-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list-item-small {
+    font-size: 0.8rem !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 0.1rem !important;
+    max-width: 5rem;
+}
+
+.list-item-medium {
+    font-size: 0.9rem !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 0.2rem !important;
+    max-width: 15rem;
+}
+
+.list-item-large {
+    font-size: 1rem !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 0.3rem !important;
+    max-width: 15rem;
+}
+
+.list-item-small h2 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.list-item-medium h2 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.list-item-large h2 {
+    margin: 0;
+    font-size: 1.2rem;
 }
