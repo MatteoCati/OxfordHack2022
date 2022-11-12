@@ -11,17 +11,22 @@ def insert_into_oxhack_roles():
     sql = "INSERT INTO oxhack_roles (\
             role, \
             role_id, \
-            q1_2021_nr_jobs, \
-            q2_2021_nr_jobs, \
-            q3_2021_nr_jobs, \
-            q4_2021_nr_jobs, \
-            q1_2022_nr_jobs, \
-            q2_2022_nr_jobs, \
-            q3_2022_nr_jobs, \
-            q4_2022_nr_jobs, \
-            nr_jobs \
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-    val = [("", "", "", "", "", "", "", "", "", "", "")]
+            category, \
+            jobs_2019, \
+            jobs_2020, \
+            jobs_2021, \
+            jobs_2022, \
+            jobs_2023, \
+            jobs_2024, \
+            jobs_2025, \
+            jobs_2026, \
+            jobs_2027, \
+            jobs_2028, \
+            jobs_2029, \
+            jobs_2030, \
+            salary \
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    val = [("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "")]
 
     mycursor.executemany(sql, val)
     mydb.commit()
