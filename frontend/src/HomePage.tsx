@@ -3,7 +3,7 @@ import config from "./config"
 import SkillsBlock from "./SkillsBlock";
 import {Typography, OutlinedInput, Button} from "@mui/material"
 import "./HomePage.css"
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface SkillsFetch {
     top_skills: string[]
