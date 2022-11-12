@@ -1,0 +1,7 @@
+{
+  "skills": {
+    "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "Haskell", "Machine Learning", "C#", "Sleeping", "Linux",
+    "Android", "Frontend", "Backend", "Design", "SQL", "git"],
+    "top_skills": ["JavaScript", "TypeScript", "Python", "Machine Learning"]
+  }
+}
