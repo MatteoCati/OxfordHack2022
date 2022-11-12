@@ -1,24 +1,18 @@
-import React from 'react';
-import './App.css';
+import { Routes, Route } from "react-router-dom"
+import Home from "./Home"
+import GraphPage from "./GraphPage"
+import RolePage from "./RolePage"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={ <Home/> } />
+        <Route path="graph" element={ <GraphPage/> } />
+        <Route path="role" element={ <RolePage/> } />
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
