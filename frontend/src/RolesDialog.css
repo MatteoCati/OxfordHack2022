@@ -1,0 +1,54 @@
+.container-style {
+    display: flex !important;
+    border-radius: 1rem !important;
+    width: 90%;
+    height: 5rem;
+    margin: 0.4rem 0 !important;
+}
+
+.role-title {
+    text-transform: uppercase;
+    font-size: 1.5rem !important;
+    padding-bottom: 0rem !important;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+
+.nameBox {
+    display: flex;
+    flex: 3;
+    font-size: 1.3rem;
+    padding: 0 1rem ;
+}
+
+.percentageBox {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+::-webkit-scrollbar-track {
+    background: #021F3B;
+  }
+
+::-webkit-scrollbar-thumb {
+    background: #032748;
+    opacity: 50%;
+    border-radius: 0.5rem;
+    height: 2rem;
+  }
+
+::-webkit-scrollbar-thumb:hover {
+    background: #04325d;
+  }

@@ -33,8 +33,6 @@ const HiringGraph: FC<HiringGraphProps> = ({graphX, graphY }) => {
 
     const containerStyle = {
         width: "100%",
-        marginTop: "80px",
-        marginBottom: "70px",
     }
 
     const data = {
@@ -63,7 +61,7 @@ const HiringGraph: FC<HiringGraphProps> = ({graphX, graphY }) => {
     };
 
     return <Box sx={containerStyle}>
-        <Typography variant={"h5"} sx={{color: config.COLORS.TEXT, marginBottom: "20px"}}>See how many people are being hired</Typography>
+        <Typography className="graph-title" sx={{color: config.COLORS.PRIMARY, letterSpacing: "0.1rem", marginTop: "4rem", marginBottom: "2rem"}}>See how many people are being hired</Typography>
         <Line options={options} data={data} />
     </Box>
 }

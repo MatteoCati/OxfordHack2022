@@ -14,22 +14,20 @@
 .header-style {
     font-size: 3rem !important;
     font-family: 'Segoe UI' !important;
-    text-transform: capitalize;
     font-weight: 400 !important;
-    height: 40%;
 }
 
 .button-container {
     display: flex;
-    min-height: 10rem;
+    min-height: 8rem;
     align-items: flex-start;
     padding: 0.5rem;
 }
 
-.little-text {
-    font-size: 0.8rem !important;
-    width: 500px;
-    padding: 0 1rem;
-    margin: 0;
-    opacity: 90%;
+.search {
+    height: 3rem;
+    margin: 0, 1rem !important;
+    width: 15rem;
+    margin: 2rem !important;
+    border-radius: 0.8rem !important;
 }

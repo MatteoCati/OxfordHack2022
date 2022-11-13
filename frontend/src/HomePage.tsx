@@ -72,35 +72,23 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
         '&:active': {
             backgroundColor: config.COLORS.ACCENT,
         },
-    }
-
-    const searchStyle = {
-        marginTop: "20px",
-        height: "50px",
-        marginBottom: "10px",
-        width: "300px",
-        backgroundColor: config.COLORS.SECONDARY,
-        color: config.COLORS.PRIMARY,
-        border: "none",
-        
+        borderRadius: "0.5rem !important",
     }
 
     const containerStyle = {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        minHeight: "inherit",
         justifyContent: "flex-end",
+        paddingTop: "8rem",
     }
 
     return (
         <Box sx={containerStyle}>
             <Typography variant={"h1"} className="header-style" sx={{color: config.COLORS.PRIMARY}}>FIND YOUR CAREER</Typography>
-            <OutlinedInput placeholder={"Search your skills"} value={search} onChange={handleSearch} sx={searchStyle}/>
-            <Typography className="little-text" sx={{color: config.COLORS.PRIMARY}}>Top results:</Typography>
-            <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'}/>
-            <Typography className="little-text" sx={{color: config.COLORS.PRIMARY}}>Your skills:</Typography>
-            <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'}/>
+            <OutlinedInput placeholder={"Search your skills"} className="search" value={search} onChange={handleSearch} sx={{backgroundColor: config.COLORS.SECONDARY, color: config.COLORS.PRIMARY}}/>
+            <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'} name="Top results:"/>
+            <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'} name="Your skills:"/>
             <Box className="button-container"><Button variant={"contained"} component={Link} to={"/graph"} sx={buttonStyle}>Find out your career</Button></Box>
         </Box>)
 }

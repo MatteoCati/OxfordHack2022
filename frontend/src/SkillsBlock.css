@@ -6,14 +6,22 @@
     padding: 20px;
 }
 
-.container {
+.skills-container {
     border-radius: 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 0 1rem 1rem 1rem;
     width: 500px;
     justify-content: center;
     margin-bottom: 0.5rem;
-    min-height: 2rem;
+    min-height: 3.5rem;
+}
+
+.little-text {
+    font-size: 0.8rem !important;
+    width: 500px;
+    padding: 0 !important;
+    margin-top: 0.2rem !important;
+    opacity: 90%;
 }

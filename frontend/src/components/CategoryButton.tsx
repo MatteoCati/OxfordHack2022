@@ -2,6 +2,7 @@ import { Box, List, ListItem } from '@mui/material';
 import Button from '@mui/material/Button';
 import { IRole } from '../common';
 import "./CategoryButton.css";
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 interface ButtonProps{
     name: string,
@@ -33,6 +34,7 @@ const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps)
                         counter >= 0 ? <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")}>{role.name}</ListItem> : <Box />
                     );
                 })}
+                <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")}><MoreHorizIcon/></ListItem>
             </List>
         </Button>
     );

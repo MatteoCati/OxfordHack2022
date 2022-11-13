@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
 
-        <AppBar position="sticky" sx={{backgroundColor: "transparent", boxShadow: "none"}}>
+        <AppBar position="absolute" sx={{backgroundColor: "transparent", boxShadow: "none", top: "0", }}>
             <Link 
               variant="h3" 
               color="inherit" 
@@ -29,7 +29,6 @@ function App() {
                 <ArrowBackIosIcon sx={{color: config.COLORS.PRIMARY, margin: "1rem", width: "2rem", height: "2rem"}}/>
             </Link>
         </AppBar>
-        <Toolbar sx={{height: "70px"}}/>
       <Routes>
         <Route path="/" element={ <HomePage selectedSkills={selectedSkills} setSelectedSkills={setSelectedSkills} setCurrentPage={setCurrentPage}/> } />
         <Route path="/graph" element={ <GraphPage setCurrentPage={setCurrentPage}/> } />

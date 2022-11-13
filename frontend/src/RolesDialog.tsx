@@ -1,11 +1,10 @@
-import {Button, Dialog, DialogContent, DialogTitle, Typography} from "@mui/material";
+import {Box, Button, Dialog, DialogContent, DialogTitle, Typography} from "@mui/material";
 import {FC} from "react";
 import {ICategory, IRole} from "./common";
 import config from "./config";
 import { useNavigate } from "react-router-dom";
-
-//import CloseIcon from '@mui/icons-material/Close';
-
+import "./RolesDialog.css"
+import WorkIcon from '@mui/icons-material/Work';
 
 interface RoleCardProps {
     role: IRole
@@ -14,20 +13,13 @@ interface RoleCardProps {
 const RoleCard: FC<RoleCardProps> = ({role}) => {
 
     const navigate=useNavigate()
-    const containerStyle = {
-        display: "flex",
-        flexDirection: "column",
-        padding: "5px",
-        border: "1px solid black",
-        borderRadius: "10px",
-        marginBottom: "5px",
-        width: "400px",
-        textDecoration: "none",
-        color: config.COLORS.TEXT
-    }
-    return <Button sx={containerStyle} component={"div"} onClick={() => navigate("/role/"+role.id)}>
-        <Typography variant={"h5"}>{role.name}</Typography>
-        <Typography variant={"h6"}>Compatibility: {role.percentage}%</Typography>
+    
+    return <Button sx={{backgroundColor: config.COLORS.SECONDARY}} component={"div"} className="container-style" onClick={() => navigate("/role/"+role.id)}>
+        <Typography sx={{color: config.COLORS.PRIMARY}} className="nameBox"><WorkIcon sx={{fontSize: "1rem", padding: "0.35rem 0.5rem"}}/>{role.name}</Typography>
+        <Box className="percentageBox">
+            <Typography sx={{color: config.COLORS.PRIMARY, fontSize: "0.6rem"}}>Skills match:</Typography>
+            <Typography sx={{color: config.COLORS.PRIMARY, fontSize: "1.2rem"}}>{role.percentage}%</Typography>
+        </Box>
     </Button>
 }
 
@@ -40,20 +32,24 @@ interface RolesDialogProps {
 
 const RolesDialog: FC<RolesDialogProps> = ({open, onClose, category}) => {
 
-    const containerStyle = {
-        display: "flex",
-        flexDirection: "column",
-    }
-
     if(!category) {
         return <div></div>
     }
 
-    return <Dialog open={open} onClose={onClose}>
-        <DialogTitle variant={"h3"} color={config.COLORS.TEXT} align={"center"}>
+    const paperProps = {
+        minWidth: "40rem", 
+        height: "32rem", 
+        backgroundColor: config.COLORS.BACKGROUND, 
+        padding: "0.5rem", 
+        borderRadius: "1rem"
+    }
+
+    return <Dialog open={open} onClose={onClose} sx={{"& .MuiDialog-paper": paperProps}}>
+        <DialogTitle sx={{backgroundColor: config.COLORS.BACKGROUND}} className="role-title" color={config.COLORS.PRIMARY} align={"center"}>
             {category.name}
-            </DialogTitle>
-        <DialogContent sx={containerStyle}>
+        </DialogTitle>
+        <Typography sx={{color: config.COLORS.PRIMARY, padding: "0 0 0.5rem 0", margin: "0", fontSize: "0.8rem", width: "100%", letterSpacing: "0.1rem", textAlign: "center"}}>Click on a job to see the details...</Typography>
+        <DialogContent sx={{backgroundColor: config.COLORS.BACKGROUND}} className="container">
             {category.roles.map(role => <RoleCard role={role}/>)}
         </DialogContent>
     </Dialog>

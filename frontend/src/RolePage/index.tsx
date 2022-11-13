@@ -6,6 +6,7 @@ import MatchingSkills from "./MatchingSkills"
 import HiringGraph from "./HiringGraph";
 import CompaniesList, {CompanyType} from "./CompaniesList";
 import { Page } from "../common";
+import "./Role.css"
 
 interface RoleType {
     id: number
@@ -36,50 +37,23 @@ const  RolePage: FC<RolePageProps> = ({ selectedSkills, setCurrentPage }) => {
     }, [])
 
     const drawerWidth = "300px"
-    const boxStyle= {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        maxWidth: "1000px",
-        marginLeft: "50px",
-        marginRight: drawerWidth,
-    }
+    
 
     if(role === null){
         return <div></div>
     }
 
-
-
-    const headerStyle = {
-        color: config.COLORS.TEXT,
-        marginBottom: "40px",
-    }
-
     return (
-        <>
-            <Box
-                component="nav"
-                aria-label="mailbox folders"
-            >
-                <Drawer
-                    variant="permanent"
-                    sx={{
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                    anchor="right"
-                    open
-                >
-                    <CompaniesList companies={role.companies}/>
-                </Drawer>
-            </Box>
-          <Box sx={boxStyle}>
-                <Typography variant={"h1"} sx={headerStyle}>{role.name}</Typography>
+        <Box className="role-container">
+            <Box className="main-box">
+                <Typography className="role-header" sx={{color: config.COLORS.PRIMARY}}>{role.name}</Typography>
                 <MatchingSkills selectedSkills={selectedSkills} requiredSkills={role.skills}/>
                 <HiringGraph graphX={role.graphX} graphY={role.graphY}/>
-
-          </Box>
-        </>
+            </Box>
+            <Box className="side-bar" sx={{backgroundColor: config.COLORS.PRIMARY, color: config.COLORS.BACKGROUND}}>
+                <CompaniesList companies={role.companies}/>
+            </Box>
+        </Box>
     );
 }
 
