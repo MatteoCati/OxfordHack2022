@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@types/react-d3-graph": "^2.6.3",
-    "d3": "^5.5.0",
-    "open-sans-fonts": "^1.6.2",
-    "react-d3-graph": "^2.6.0"
-  }
-}
