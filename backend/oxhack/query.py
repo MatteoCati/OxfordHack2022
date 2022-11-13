@@ -6,7 +6,7 @@ def query_with_fetchall(query):
     try:
         dbconfig = read_db_config()
         conn = MySQLConnection(**dbconfig)
-        cursor = conn.cursor()
+        cursor = conn.cursor(dictionary=True)
         cursor.execute(query)
         rows = cursor.fetchall()
 
@@ -21,7 +21,3 @@ def query_with_fetchall(query):
     finally:
         cursor.close()
         conn.close()
-
-
-if __name__ == "__main__":
-    query_with_fetchall("SELECT * FROM oxhack_roles")
