@@ -3,5 +3,249 @@
     "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "Haskell", "Machine Learning", "C#", "Sleeping", "Linux",
     "Android", "Frontend", "Backend", "Design", "SQL", "git"],
     "top_skills": ["JavaScript", "TypeScript", "Python", "Machine Learning"]
-  }
+  },
+  "role": [
+    {
+      "id": 1,
+      "name": "Software Engineer",
+      "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "JavaScript", "Java", "TypeScript", "Python", "Rust"],
+      "graphX": ["Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022"],
+      "graphY": [100000, 200000, 400000, 800000, 720000, 700000],
+      "gender": [0.60, 0.30, 0.10],
+      "avgSalary": 175000,
+      "companies": [
+        {
+          "name": "Google",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Microsoft",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Amazon",
+          "link": "https://google.com"
+        }
+      ]
+    }
+  ],
+  "categories": [
+      {
+        "name" : "tech",
+        "percentage" : 90,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          },
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          }
+        ]
+      },
+      {
+        "name" : "healthcare",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          }
+        ]
+      },
+      {
+        "name" : "healthcare",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "doctor",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "nurse",
+            "percentage" : 60
+          },
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          }
+        ]
+      },
+      {
+        "name" : "healthcare",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "doctor",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "nurse",
+            "percentage" : 60
+          },
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          }
+        ]
+      },
+      {
+        "name" : "healthcare",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "doctor",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "nurse",
+            "percentage" : 60
+          },
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          }
+        ]
+      },
+      {
+        "name" : "healthcare",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "doctor",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "nurse",
+            "percentage" : 60
+          },
+          {
+            "id": 1,
+            "name": "software developer",
+            "percentage" : 90
+          },
+          {
+            "id": 1,
+            "name": "cybersecurity",
+            "percentage" : 80
+          },
+          {
+            "id": 1,
+            "name": "IT support",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "data analyst",
+            "percentage" : 75
+          }
+        ]
+      }
+    ]
+
 }

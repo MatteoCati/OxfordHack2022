@@ -1,6 +1,83 @@
 
-.btn {
-    width: 20em;
-    height: 20em;
-    background-color: black;
+.btn-small {
+    width: 12em;
+    height: 12em;
+    background-color: #D7708D !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+    font-size: small;
 }
+
+.btn-medium {
+    width: 15em;
+    height: 15em;
+    background-color: #043562 !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+}
+
+.btn-large {
+    width: 21em;
+    height: 21em;
+    background-color: #EDBFCC !important;
+    border-radius: 50% !important;
+    position: absolute !important;
+}
+
+.role-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list-item-small {
+    font-size: 0.7rem !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 0.05rem !important;
+    max-width: 5rem;
+    opacity: 90%;
+}
+
+.list-item-medium {
+    font-size: 0.8rem !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 0.1rem !important;
+    max-width: 15rem;
+    color: #EDBFCC;
+    opacity: 90%;
+}
+
+.list-item-large {
+    font-size: 0.9rem !important;
+    display: flex !important;
+    flex-direction: column;
+    padding: 0.1rem !important;
+    max-width: 15rem;
+    opacity: 90%;
+}
+
+.list-item-small h2 {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 100%;
+}
+
+.list-item-medium h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 100%;
+}
+
+.list-item-large h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 100%;
+}
+
+.btn-expandable:hover {
+    transform: scale(1.1);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
