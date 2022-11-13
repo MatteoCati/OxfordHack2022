@@ -16,7 +16,7 @@ interface ButtonProps{
 const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps) => {
 
 
-    let counter = rating == 0 ? 3 : (rating == 1 ? 4 : 4)
+    let counter = rating == 0 ? 1 : (rating == 1 ? 3 : 2)
 
     return (
         <Button
@@ -31,7 +31,7 @@ const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps)
                 {roles.map(role => {
                     counter -= 1
                     return(
-                        counter >= 0 ? <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")}>{role.name}</ListItem> : <Box />
+                        counter >= 0 ? <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")} sx={{textAlign: "center"}}>{role.name}</ListItem> : <Box />
                     );
                 })}
                 <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")}><MoreHorizIcon/></ListItem>
