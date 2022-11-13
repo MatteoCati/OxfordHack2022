@@ -6,9 +6,10 @@ import { ICategory, Page } from './common';
 
 interface GraphPageProps {
     setCurrentPage: (page: number) => void,
+    setCurrentRole: (role: number) => void,
 }
 
-const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
+const GraphPage: FC<GraphPageProps> = ({setCurrentPage, setCurrentRole}) => {
     const [categories, setCategories] = useState<ICategory[]>([])
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
     const [dialogContent, setDialogContent] = useState<ICategory>()
@@ -53,7 +54,7 @@ const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
                 />
             );
         })}
-         <RolesDialog category={dialogContent!} open={dialogOpen} onClose={handleDialogClose}/>
+         <RolesDialog category={dialogContent!} open={dialogOpen} onClose={handleDialogClose} setCurrentRole={setCurrentRole}/>
       </div>
     );
   }

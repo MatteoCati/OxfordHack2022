@@ -22,7 +22,8 @@ const SkillsBlock: FC<SkillsBlockProps> = ({skills, onSkillSelected, defaultText
         backgroundColor: config.COLORS.PRIMARY,
         ml: "2px", 
         mr: "2px",  
-        opacity: "90%"
+        opacity: "90%",
+        marginTop: "0.2rem !important",
     }
 
 

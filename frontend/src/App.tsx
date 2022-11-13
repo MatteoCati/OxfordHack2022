@@ -12,8 +12,9 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 
 function App() {
-  const [selectedSkills, setSelectedSkills] = useState<string[]>(["JavaScript", "Python", "Java", "TypeScript"])
+  const [selectedSkills, setSelectedSkills] = useState<string[]>([])
   const [currentPage, setCurrentPage] = useState<Page>(0)
+  const [currentRole, setCurrentRole] = useState<number>(0)
   
   return (
     <div className="App">
@@ -31,8 +32,8 @@ function App() {
         </AppBar>
       <Routes>
         <Route path="/" element={ <HomePage selectedSkills={selectedSkills} setSelectedSkills={setSelectedSkills} setCurrentPage={setCurrentPage}/> } />
-        <Route path="/graph" element={ <GraphPage setCurrentPage={setCurrentPage}/> } />
-        <Route path= "/role/:roleId" element={ <RolePage selectedSkills={selectedSkills} setCurrentPage={setCurrentPage}/> } />
+        <Route path="/graph" element={ <GraphPage setCurrentPage={setCurrentPage} setCurrentRole={setCurrentRole}/> } />
+        <Route path= "/role/:roleId" element={ <RolePage selectedSkills={selectedSkills} setCurrentPage={setCurrentPage} roleNumber={currentRole}/> } />
       </Routes>
     </div>
   )

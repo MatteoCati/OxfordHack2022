@@ -7,20 +7,30 @@ import "./RolesDialog.css"
 import WorkIcon from '@mui/icons-material/Work';
 
 interface RoleCardProps {
-    role: IRole
+    role: IRole,
 }
 
 const RoleCard: FC<RoleCardProps> = ({role}) => {
 
     const navigate=useNavigate()
     
-    return <Button sx={{backgroundColor: config.COLORS.SECONDARY}} component={"div"} className="container-style" onClick={() => navigate("/role/"+role.id)}>
-        <Typography sx={{color: config.COLORS.PRIMARY}} className="nameBox"><WorkIcon sx={{fontSize: "1rem", padding: "0.35rem 0.5rem"}}/>{role.name}</Typography>
-        <Box className="percentageBox">
-            <Typography sx={{color: config.COLORS.PRIMARY, fontSize: "0.6rem"}}>Skills match:</Typography>
-            <Typography sx={{color: config.COLORS.PRIMARY, fontSize: "1.2rem"}}>{role.percentage}%</Typography>
-        </Box>
-    </Button>
+    return(
+        <Button 
+            sx={{backgroundColor: config.COLORS.SECONDARY}} 
+            component={"div"} 
+            className="container-style" 
+            onClick={() => {
+                const url = role.name == "Software Engineer" ? "/role-se" : (role.name == "Frontend Developer" ? "/role-fd" : "/role-a")
+                navigate(url)
+            }}
+        >
+            <Typography sx={{color: config.COLORS.PRIMARY}} className="nameBox"><WorkIcon sx={{fontSize: "1rem", padding: "0.35rem 0.5rem"}}/>{role.name}</Typography>
+            <Box className="percentageBox">
+                <Typography sx={{color: config.COLORS.PRIMARY, fontSize: "0.6rem"}}>Skills match:</Typography>
+                <Typography sx={{color: config.COLORS.PRIMARY, fontSize: "1.2rem"}}>{role.percentage}%</Typography>
+            </Box>
+        </Button>
+    );
 }
 
 
@@ -28,9 +38,10 @@ interface RolesDialogProps {
     open: boolean
     onClose: () => void
     category: ICategory | undefined
+    setCurrentRole: (role: number) => void,
 }
 
-const RolesDialog: FC<RolesDialogProps> = ({open, onClose, category}) => {
+const RolesDialog: FC<RolesDialogProps> = ({open, onClose, category, setCurrentRole}) => {
 
     if(!category) {
         return <div></div>

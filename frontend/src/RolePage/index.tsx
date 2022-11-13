@@ -21,22 +21,22 @@ interface RoleType {
 
 interface RolePageProps {
     selectedSkills: string[],
+    roleNumber: number,
     setCurrentPage: (page: number) => void,
 }
 
-const  RolePage: FC<RolePageProps> = ({ selectedSkills, setCurrentPage }) => {
+const  RolePage: FC<RolePageProps> = ({ selectedSkills, roleNumber, setCurrentPage}) => {
     const [role, setRole] = useState<RoleType | null>(null)
-    const {roleId} = useParams();
+    const roleURL = roleNumber == 0 ? "/role-se" : (roleNumber == 1 ? "/role-fd" : "/role-a")
+    
     useEffect(() => {
         setCurrentPage(Page.ROLE)
-        fetch(config.BACKEND_BASE_URL+"/role/"+roleId)
+        fetch(config.BACKEND_BASE_URL+roleURL)
             .then(val => val.json())
             .then((data: RoleType) => {
                 setRole(data)
             })
     }, [])
-
-    const drawerWidth = "300px"
     
 
     if(role === null){

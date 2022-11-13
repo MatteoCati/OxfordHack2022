@@ -1,14 +1,14 @@
 {
   "skills": {
-    "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "Haskell", "Machine Learning", "C#", "Sleeping", "Linux",
-    "Android", "Frontend", "Backend", "Design", "SQL", "git"],
-    "top_skills": ["JavaScript", "TypeScript", "Python", "Machine Learning"]
+    "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "Haskell", "Scala", "Machine Learning", "C#", "C++", "C", "Sleeping", "Linux",
+    "Android", "Frontend", "Backend", "Design", "SQL", "git", "Excel", "Word", "React", "CSS", "PowerPoint", "adaptability", "communication", "creative thinking", "teamwork", "mathematics"],
+    "top_skills": ["TypeScript", "Python", "Machine Learning", "Haskell", "Design"]
   },
-  "role": [
+  "role-se": [
     {
       "id": 1,
       "name": "Software Engineer",
-      "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "JavaScript", "Java", "TypeScript", "Python", "Rust"],
+      "skills": ["Python", "Backend", "C++", "C#", "Rust", "Linux", "git", "SQL"],
       "graphX": ["Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022"],
       "graphY": [100000, 200000, 400000, 800000, 720000, 700000],
       "gender": [0.60, 0.30, 0.10],
@@ -29,14 +29,64 @@
       ]
     }
   ],
+  "role-a": [
+    {
+      "id": 1,
+      "name": "Accountant",
+      "skills": ["Excel", "PowerPoint", "Word", "mathematics", "communication", "adaptability"],
+      "graphX": ["Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022"],
+      "graphY": [100000, 200000, 400000, 900000, 650000, 600000],
+      "gender": [0.60, 0.30, 0.10],
+      "avgSalary": 175000,
+      "companies": [
+        {
+          "name": "Aon",
+          "link": "https://jobs.aon.com/"
+        },
+        {
+          "name": "Charles Stanley",
+          "link": "https://www.charles-stanley.co.uk/services/plan/financial-planning?gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEFgNrkv_EDD-YQ2LjgCGsg6UUpIZ4Yh4P-sDRrPqW14_jVU_w1lfo0aAu2XEALw_wcB"
+        },
+        {
+          "name": "Arrowpoint",
+          "link": "https://www.arrowpointadvisory.com/careers/?gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEFzl51Xkzm4Ab77fJwPxEj5RIw9ZMeEAk6tNOjqrbwmpFl2IL4t61QaAh7YEALw_wcB"
+        }
+      ]
+    }
+  ],
+  "role-fd": [
+    {
+      "id": 1,
+      "name": "Frontend developer",
+      "skills": ["Frontend", "React", "TypeScript", "JavaScript", "CSS", "Android", "Design", "creative thinking"],
+      "graphX": ["Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022"],
+      "graphY": [100000, 200000, 400000, 800000, 720000, 900000],
+      "gender": [0.60, 0.30, 0.10],
+      "avgSalary": 175000,
+      "companies": [
+        {
+          "name": "Google",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Microsoft",
+          "link": "https://google.com"
+        },
+        {
+          "name": "Amazon",
+          "link": "https://google.com"
+        }
+      ]
+    }
+  ],
   "categories": [
       {
-        "name" : "tech",
-        "percentage" : 90,
+        "name" : "Technology",
+        "percentage" : 95,
         "roles" : [
           {
             "id": 1,
-            "name": "software developer",
+            "name": "software engineer",
             "percentage" : 90
           },
           {
@@ -77,7 +127,7 @@
         ]
       },
       {
-        "name" : "healthcare",
+        "name" : "Administration",
         "percentage": 70,
         "roles" : [
           {
