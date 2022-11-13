@@ -18,8 +18,8 @@ const CompanyCard: FC<{ company: CompanyType}> = ({company}) => {
     }
 
     return <Box sx={containerStyle}>
-        <Typography >{company.name}</Typography>
-        <Link href={company.link}>Click here to apply</Link>
+        <Typography sx={{fontSize: "1rem"}}>{company.name}</Typography>
+        <Link href={company.link} sx={{fontSize: "0.8rem", color: config.COLORS.LINK, textDecorationColor: config.COLORS.LINK}}>Click here to apply</Link>
     </Box>
 }
 

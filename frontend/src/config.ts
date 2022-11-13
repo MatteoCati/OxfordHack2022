@@ -6,5 +6,6 @@ export default {
         PRIMARY: "#EDBFCC",     // light pink
         SECONDARY: "#043562",   // lighter blue
         ACCENT: "#D7708D",      // dark pink
+        LINK: "#ab4f69"
     }
 }
