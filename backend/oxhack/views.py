@@ -45,12 +45,42 @@ def get_percentages_view(request):
 
 
 @api_view(["GET"])
-def get_role_data_view(request):
+def get_role_data_view(request, role=1):
     """ask for a role (like software engineer) and return the data about the specific role"""
-    role = request.data
 
     role_data = query_with_fetchall(
-        'SELECT * FROM oxhack_roles WHERE role = "{0}"'.format(role)
+        'SELECT * FROM oxhack_roles WHERE id = "{0}"'.format(role)
+    )[0]
+
+    role_skill_data = query_with_fetchall(
+        f"SELECT skill FROM oxhack_role_skills WHERE role_id={role_data['role_id']}"
     )
 
-    return Response(role_data[0], status=status.HTTP_200_OK)
+    companies = query_with_fetchall(
+        f"SELECT company_name AS name, link FROM oxhack_role_companies WHERE role_id={role_data['role_id']}"
+    )
+
+    graphX = [
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025",
+        "2026",
+        "2027",
+        "2029",
+        "2030",
+    ]
+
+    res = {
+        "id": role_data["id"],
+        "name": role_data["role"],
+        "skills": map(lambda x: x["skill"], role_skill_data),
+        "graphX": graphX,
+        "graphY": map(lambda x: role_data["jobs_" + x], graphX),
+        "companies": companies,
+    }
+
+    return Response(res, status=status.HTTP_200_OK)
