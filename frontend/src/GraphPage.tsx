@@ -6,9 +6,10 @@ import { ICategory, Page } from './common';
 
 interface GraphPageProps {
     setCurrentPage: (page: number) => void,
+    selectedSkills: string[]
 }
 
-const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
+const GraphPage: FC<GraphPageProps> = ({ setCurrentPage, selectedSkills }) => {
     const [categories, setCategories] = useState<ICategory[]>([])
     const [dialogOpen, setDialogOpen] = useState<boolean>(false)
     const [dialogContent, setDialogContent] = useState<ICategory>()
@@ -24,38 +25,45 @@ const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
 
     useEffect(() => {
         setCurrentPage(Page.GRAPH)
-        fetch(config.BACKEND_BASE_URL + "/categories")
+        fetch(config.BACKEND_BASE_URL + "/categories", {
+            method: "POST",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ skills: selectedSkills })
+        })
             .then(jsonData => jsonData.json())
-            .then((data: ICategory[]) => {
+            .then((data: { categories: ICategory[] }) => {
                 console.log(data)
-                setCategories(data)
-         })
-     }, []);
+                setCategories(data.categories)
+            })
+    }, []);
 
-    const handleDialogClose = ()=> {
+    const handleDialogClose = () => {
         setDialogOpen(false)
     }
 
     return (
-      <div>
-        {categories.map(category => {
-            counter -= 1;
-            return (<CategoryButton
-                name={category.name}
-                roles={category.roles}
-                rating={Math.floor(counter/2)}
-                left={coordinates[counter][0]}
-                top={coordinates[counter][1]}
-                onClick={() => {
-                    setDialogContent(category)
-                    setDialogOpen(true)
-                }}
+        <div>
+            {categories.map(category => {
+                counter -= 1;
+                return (<CategoryButton
+                    name={category.name}
+                    roles={category.roles}
+                    rating={Math.floor(counter / 2)}
+                    left={coordinates[counter][0]}
+                    top={coordinates[counter][1]}
+                    onClick={() => {
+                        setDialogContent(category)
+                        setDialogOpen(true)
+                    }}
                 />
-            );
-        })}
-         <RolesDialog category={dialogContent!} open={dialogOpen} onClose={handleDialogClose}/>
-      </div>
+                );
+            })}
+            <RolesDialog category={dialogContent!} open={dialogOpen} onClose={handleDialogClose} />
+        </div>
     );
-  }
+}
 
-  export default GraphPage;
+export default GraphPage;

@@ -1,5 +1,5 @@
 export default {
-    BACKEND_BASE_URL: "http://localhost:4000",
+    BACKEND_BASE_URL: "http://localhost:8000",
     COLORS: {
         BACKGROUND: "#021F3B",  // dark blue
         TEXT: "#F5F5F5",        // white

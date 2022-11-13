@@ -1,12 +1,11 @@
 from django.shortcuts import render
-from django.db.utils import IntegrityError
-from query import query_with_fetchall
+from .query import query_with_fetchall
 
 
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from calculate_percentages_on_skills import calculate_percentages
+from .calculate_percentages_on_skills import calculate_percentages
 
 from random import *
 
@@ -28,9 +27,10 @@ def get_skills_and_relevant_skills_view(request):
         "SELECT skill FROM (SELECT skill, count(skill) FROM oxhack_role_skills GROUP BY skill ORDER BY count(skill) DESC LIMIT 5) AS TMP"
     )
 
+    get_skills = lambda x: x["skill"]
     response = {}
-    response["all_skills"] = all_skills
-    response["frequent_skills"] = frequent_skills
+    response["skills"] = list(map(get_skills, all_skills))
+    response["top_skills"] = list(map(get_skills, frequent_skills))
 
     return Response(response, status=status.HTTP_200_OK)
 
@@ -39,12 +39,12 @@ def get_skills_and_relevant_skills_view(request):
 def get_percentages_view(request):
     """get the list of skills and return the json from emilia on messenger"""
 
-    skills = request.data.skills
+    skills = request.data["skills"]
     percentages = calculate_percentages(skills)
     return Response(percentages, status=status.HTTP_200_OK)
 
 
-@api_view(["POST"])
+@api_view(["GET"])
 def get_role_data_view(request):
     """ask for a role (like software engineer) and return the data about the specific role"""
     role = request.data
