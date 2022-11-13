@@ -1,5 +1,5 @@
 import {FC} from "react";
-import {Box, Link, Typography} from "@mui/material";
+import {Box, Drawer, Link, Typography} from "@mui/material";
 import config from "../config";
 
 export interface CompanyType {
@@ -44,17 +44,35 @@ const CompaniesList: FC<CompaniesListProps> = ({companies}) => {
         alignItems: "center",
         width: "100%"
     }
+    let drawerWidth = "20rem"
 
     return (
-        <Box sx={containerStyle}>
+        <Drawer
+            sx={{
+                color: config.COLORS.BACKGROUND,
+                width: drawerWidth,
+                flexShrink: 0,
+                '& .MuiDrawer-paper': {
+                    width: drawerWidth,
+                    boxSizing: 'border-box',
+                    backgroundColor: config.COLORS.PRIMARY,
+                    padding: "1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                },
+            }}
+            variant="permanent"
+            anchor="right"
+            aria-label="Suggestions of companies to apply to"
+        >
             <Typography className="side-bar-header">Some companies you can apply to:</Typography>
             <Box sx={companiesListStyle}>
                 {
                     companies.map((company: CompanyType, idx: number) => <CompanyCard company={company} key={idx}/>)
                 }
             </Box>
-
-        </Box>
+        </Drawer>
     )
 }
 

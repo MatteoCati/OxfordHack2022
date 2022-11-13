@@ -37,7 +37,7 @@ const  RolePage: FC<RolePageProps> = ({ selectedSkills, setCurrentPage }) => {
     }, [])
 
     const drawerWidth = "300px"
-    
+
 
     if(role === null){
         return <div></div>
@@ -50,7 +50,7 @@ const  RolePage: FC<RolePageProps> = ({ selectedSkills, setCurrentPage }) => {
                 <MatchingSkills selectedSkills={selectedSkills} requiredSkills={role.skills}/>
                 <HiringGraph graphX={role.graphX} graphY={role.graphY}/>
             </Box>
-            <Box className="side-bar" sx={{backgroundColor: config.COLORS.PRIMARY, color: config.COLORS.BACKGROUND}}>
+            <Box className="side-bar">
                 <CompaniesList companies={role.companies}/>
             </Box>
         </Box>

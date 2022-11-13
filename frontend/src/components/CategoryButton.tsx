@@ -23,6 +23,7 @@ const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps)
             className={ "btn-expandable " + (rating == 0 ? "btn-small" : (rating == 1 ? "btn-medium" : "btn-large"))}
             sx={{color: 'black', left: {left}, top: {top}}}
             onClick={onClick}
+            aria-label={name}
         >
             <List className="role-list">
                 <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")}>

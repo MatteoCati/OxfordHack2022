@@ -87,7 +87,7 @@ const MatchingSkills: FC<MatchingSkillsProps> = ({selectedSkills, requiredSkills
 
     return <Box sx={containerStyle}>
         <Box sx={horContainerStyle}>
-            <Box sx={skillsTableStyle}>
+            <Box sx={skillsTableStyle} aria-label="Required skills for this career">
                 <Typography className="skills-title" sx={{color: config.COLORS.PRIMARY, textTransform: "uppercase", textAlign: "center", padding: "0 0 0.5rem 1rem", letterSpacing: "0.1rem"}}>Required skills</Typography>
                 <Box sx={columnsTableStyle}>
                     {

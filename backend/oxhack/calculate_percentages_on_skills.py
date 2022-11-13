@@ -83,7 +83,7 @@ def calculate_percentages(
                 json_role["percentage"] = (int)(roles_category_percentage["percentage"])
                 category_roles.append(json_role)
 
-        category_json["roles"] = category_roles
+        category_json["roles"] = sorted(category_roles, key=lambda x: x["percentage"], reverse=True)
         ans["categories"].append(category_json)
 
     ans["categories"] = sorted(

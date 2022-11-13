@@ -86,7 +86,7 @@ const HomePage: FC<HomePageProps> = ({ selectedSkills, setSelectedSkills, setCur
 
     return (
         <Box sx={containerStyle}>
-            <Typography variant={"h1"} className="header-style" sx={{ color: config.COLORS.PRIMARY }}>FIND YOUR CAREER</Typography>
+            <Typography variant={"h1"} className="header-style" sx={{ color: config.COLORS.PRIMARY }} aria-label="Enter your skills into the box below to find career suggestions">FIND YOUR CAREER</Typography>
             <OutlinedInput placeholder={"Search your skills"} className="search" value={search} onChange={handleSearch} sx={{ backgroundColor: config.COLORS.SECONDARY, color: config.COLORS.PRIMARY }} />
             <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'} name="Top results:" />
             <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'} name="Your skills:" />
