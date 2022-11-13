@@ -1,4 +1,4 @@
-from query import query_with_fetchall
+from .query import query_with_fetchall
 
 
 def calculate_percentages(
@@ -24,7 +24,9 @@ def calculate_percentages(
         role_skill["matching"] = role_skill["skill"] in skills
         role_skill_matching_data.append(role_skill)
 
-    all_roles_category = query_with_fetchall("SELECT role, category FROM oxhack_roles")
+    all_roles_category = query_with_fetchall(
+        "SELECT id, role, category FROM oxhack_roles"
+    )
 
     def count_percentage_role(role):
         all = 0
@@ -77,10 +79,14 @@ def calculate_percentages(
             if roles_category_percentage["category"] == category:
                 json_role = {}
                 json_role["name"] = roles_category_percentage["role"]
+                json_role["id"] = roles_category_percentage["id"]
                 json_role["percentage"] = (int)(roles_category_percentage["percentage"])
                 category_roles.append(json_role)
 
         category_json["roles"] = category_roles
         ans["categories"].append(category_json)
 
+    ans["categories"] = sorted(
+        ans["categories"], reverse=True, key=lambda x: x["percentage"]
+    )
     return ans

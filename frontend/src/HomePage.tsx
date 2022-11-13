@@ -1,7 +1,7 @@
-import {FC, useEffect, useState} from "react";
+import { FC, useEffect, useState } from "react";
 import config from "./config"
 import SkillsBlock from "./SkillsBlock";
-import {Typography, OutlinedInput, Button, Box} from "@mui/material"
+import { Typography, OutlinedInput, Button, Box } from "@mui/material"
 import "./HomePage.css"
 import { Link } from "react-router-dom";
 import { Page } from "./common";
@@ -17,7 +17,7 @@ interface HomePageProps {
     setCurrentPage: (page: number) => void,
 }
 
-const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurrentPage}) => {
+const HomePage: FC<HomePageProps> = ({ selectedSkills, setSelectedSkills, setCurrentPage }) => {
 
     const [search, setSearch] = useState<string>('')
     const [skills, setSkills] = useState<string[]>([])
@@ -27,13 +27,14 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
 
     useEffect(() => {
         setCurrentPage(Page.HOME)
-       fetch(config.BACKEND_BASE_URL + "/skills")
-           .then(jsonData => jsonData.json())
-           .then((data: SkillsFetch) => {
-               setSkills(data.skills)
-               setTopSkills(data.top_skills)
-               setShownSkills(data.top_skills)
-        })
+        fetch(config.BACKEND_BASE_URL + "/get-skills-and-relevant-skills")
+            .then(jsonData => jsonData.json())
+            .then((data: SkillsFetch) => {
+                setSkills(data.skills)
+                console.log(data.skills)
+                setTopSkills(data.top_skills)
+                setShownSkills(data.top_skills)
+            })
     }, []);
 
     const handleSearch = (ev: any) => {
@@ -44,9 +45,9 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
     }
 
     const updateShownSkills = (selected: string[], searchText: string) => {
-        if(searchText === ''){
+        if (searchText === '') {
             setShownSkills(topSkills.filter(skill => !selected.includes(skill)))
-        }else{
+        } else {
             const lowerValue = searchText.toLowerCase()
             const matchingSkills = skills.filter(skill => skill.toLowerCase().includes(lowerValue) && !selected.includes(skill))
             setShownSkills(matchingSkills)
@@ -85,10 +86,10 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
 
     return (
         <Box sx={containerStyle}>
-            <Typography variant={"h1"} className="header-style" sx={{color: config.COLORS.PRIMARY}}>FIND YOUR CAREER</Typography>
-            <OutlinedInput placeholder={"Search your skills"} className="search" value={search} onChange={handleSearch} sx={{backgroundColor: config.COLORS.SECONDARY, color: config.COLORS.PRIMARY}}/>
-            <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'} name="Top results:"/>
-            <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'} name="Your skills:"/>
+            <Typography variant={"h1"} className="header-style" sx={{ color: config.COLORS.PRIMARY }}>FIND YOUR CAREER</Typography>
+            <OutlinedInput placeholder={"Search your skills"} className="search" value={search} onChange={handleSearch} sx={{ backgroundColor: config.COLORS.SECONDARY, color: config.COLORS.PRIMARY }} />
+            <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'} name="Top results:" />
+            <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'} name="Your skills:" />
             <Box className="button-container"><Button variant={"contained"} component={Link} to={"/graph"} sx={buttonStyle}>Find out your career</Button></Box>
         </Box>)
 }
