@@ -10,9 +10,10 @@ def query_with_fetchall(query):
         cursor.execute(query)
         rows = cursor.fetchall()
 
-        print("Total Row(s):", cursor.rowcount)
-        for row in rows:
-            print(row)
+        return rows
+        # print("Total Row(s):", cursor.rowcount)
+        # for row in rows:
+        #    print(row)
 
     except Error as e:
         print(e)
