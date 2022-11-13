@@ -1,11 +1,13 @@
 import CategoryButton from './components/CategoryButton';
 import config from "./config"
-import { useEffect, useState } from "react";
-import { ICategory } from './common';
+import { FC, useEffect, useState } from "react";
+import { ICategory, Page } from './common';
 
-// need a list of categories that we will get from the request and pass a category to a custom button object
+interface GraphPageProps {
+    setCurrentPage: (page: number) => void,
+}
 
-function GraphPage() {
+const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
     const [categories, setCategories] = useState<ICategory[]>([])
     const coordinates = [
         ["10%", "45%"], //small
@@ -18,6 +20,7 @@ function GraphPage() {
     let counter = 6
 
     useEffect(() => {
+        setCurrentPage(Page.GRAPH)
         fetch(config.BACKEND_BASE_URL + "/categories")
             .then(jsonData => jsonData.json())
             .then((data: ICategory[]) => {
@@ -28,7 +31,6 @@ function GraphPage() {
 
     return (
       <div>
-        <h1>This is the graph page</h1>
         {categories.map(category => {
             counter -= 1;
             return (<CategoryButton

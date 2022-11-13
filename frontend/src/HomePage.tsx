@@ -4,6 +4,7 @@ import SkillsBlock from "./SkillsBlock";
 import {Typography, OutlinedInput, Button, Box} from "@mui/material"
 import "./HomePage.css"
 import { Link } from "react-router-dom";
+import { Page } from "./common";
 
 interface SkillsFetch {
     top_skills: string[]
@@ -13,9 +14,11 @@ interface SkillsFetch {
 interface HomePageProps {
     selectedSkills: string[];
     setSelectedSkills: (newSkills: string[]) => void,
+    setCurrentPage: (page: number) => void,
 }
 
-const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills}) => {
+const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurrentPage}) => {
+
     const [search, setSearch] = useState<string>('')
     const [skills, setSkills] = useState<string[]>([])
 
@@ -23,6 +26,7 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills}) => {
     const [topSkills, setTopSkills] = useState<string[]>([])
 
     useEffect(() => {
+        setCurrentPage(Page.HOME)
        fetch(config.BACKEND_BASE_URL + "/skills")
            .then(jsonData => jsonData.json())
            .then((data: SkillsFetch) => {
@@ -75,28 +79,29 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills}) => {
         height: "50px",
         marginBottom: "10px",
         width: "300px",
-    }
-
-    const headerStyle  = {
-        color: config.COLORS.TEXT
+        backgroundColor: config.COLORS.SECONDARY,
+        color: config.COLORS.PRIMARY,
+        border: "none",
+        
     }
 
     const containerStyle = {
-        backgroundColor: config.COLORS.BACKGROUND,
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
-        marginTop: "40px",
+        minHeight: "inherit",
+        justifyContent: "flex-end",
     }
 
     return (
         <Box sx={containerStyle}>
-            <Typography variant={"h1"} sx={headerStyle}>Find your Career</Typography>
+            <Typography variant={"h1"} className="header-style" sx={{color: config.COLORS.PRIMARY}}>FIND YOUR CAREER</Typography>
             <OutlinedInput placeholder={"Search your skills"} value={search} onChange={handleSearch} sx={searchStyle}/>
+            <Typography className="little-text" sx={{color: config.COLORS.PRIMARY}}>Top results:</Typography>
             <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'}/>
+            <Typography className="little-text" sx={{color: config.COLORS.PRIMARY}}>Your skills:</Typography>
             <SkillsBlock skills={selectedSkills} onSkillSelected={removeSkill} defaultText={'Select some skills to start...'}/>
-            <Button variant={"contained"} component={Link} to={"/graph"} sx={buttonStyle}>Find out your career</Button>
+            <Box className="button-container"><Button variant={"contained"} component={Link} to={"/graph"} sx={buttonStyle}>Find out your career</Button></Box>
         </Box>)
 }
 

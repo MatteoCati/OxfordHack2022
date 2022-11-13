@@ -1,8 +1,19 @@
 .block {
-    border: 1px solid black;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
+}
+
+.container {
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 500px;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    min-height: 2rem;
 }

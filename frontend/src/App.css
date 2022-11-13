@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: #F5F5F5;
+  background-color: #021F3B;
   min-height: 100vh;
+  font-family: 'Segoe UI' !important;
 }
