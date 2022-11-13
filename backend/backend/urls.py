@@ -26,5 +26,5 @@ urlpatterns = [
         name="get_skills_and_relevant_skills",
     ),
     path("categories", get_percentages_view, name="get_percentages_view"),
-    path("role/:role", get_role_data_view, name="get_role_data_view"),
+    path("role/<int:role>", get_role_data_view, name="get_role_data_view"),
 ]

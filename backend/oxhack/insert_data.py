@@ -285,6 +285,7 @@ def insert_into_oxhack_role_skills():
         ("Data Entry and Information Processing", "1", "attention to detail"),
         ("Web Developer", "2", "creativity"),
         ("Web Developer", "2", "programming"),
+        ("Web Developer", "2", "programming")
         ("Truck Driver", "3", "trucking school diploma"),
         ("Truck Driver", "3", "adaptability"),
         ("Computer Network Architects", "4", "design & deployment of global WAN"),
@@ -306,6 +307,7 @@ def insert_into_oxhack_role_skills():
         ("Market Research Analysts", "10", "attention to detail"),
         ("Wind Turbine Technicians", "11", "IT and technical skills"),
         ("Wind Turbine Technicians", "11", "attention to detail"),
+        ("Wind Turbine Technicians", "11", "analytical"),
     ]
 
     mycursor.executemany(sql, val)
