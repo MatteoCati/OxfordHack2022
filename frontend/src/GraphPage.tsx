@@ -2,11 +2,14 @@ import CategoryButton from './components/CategoryButton';
 import config from "./config"
 import { useEffect, useState } from "react";
 import { ICategory } from './common';
+import RolesDialog from "./RolesDialog";
 
 // need a list of categories that we will get from the request and pass a category to a custom button object
 
 function GraphPage() {
     const [categories, setCategories] = useState<ICategory[]>([])
+    const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+    const [dialogContent, setDialogContent] = useState<ICategory>()
     const coordinates = [
         ["10%", "45%"], //small
         ["73%", "36%"], //small
@@ -26,6 +29,10 @@ function GraphPage() {
          })
      }, []);
 
+    const handleDialogClose = ()=> {
+        setDialogOpen(false)
+    }
+
     return (
       <div>
         <h1>This is the graph page</h1>
@@ -37,9 +44,14 @@ function GraphPage() {
                 rating={Math.floor(counter/2)}
                 left={coordinates[counter][0]}
                 top={coordinates[counter][1]}
+                onClick={() => {
+                    setDialogContent(category)
+                    setDialogOpen(true)
+                }}
                 />
             );
         })}
+         <RolesDialog category={dialogContent!} open={dialogOpen} onClose={handleDialogClose}/>
       </div>
     );
   }
