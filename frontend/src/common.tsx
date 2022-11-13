@@ -5,6 +5,7 @@ export interface ICategory {
 }
 
 export interface IRole {
+    id: number
     name: string,
     percentage: number,
 }

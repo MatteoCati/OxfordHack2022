@@ -33,7 +33,8 @@ const HiringGraph: FC<HiringGraphProps> = ({graphX, graphY }) => {
 
     const containerStyle = {
         width: "100%",
-        marginTop: "50px",
+        marginTop: "80px",
+        marginBottom: "70px",
     }
 
     const data = {

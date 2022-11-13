@@ -9,17 +9,19 @@ interface ButtonProps{
     roles: IRole[],
     left: string,
     top: string,
+    onClick: () => void
 }
 
-const CategoryButton = ({name, rating, roles, left, top} : ButtonProps) => {
+const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps) => {
 
 
     let counter = rating == 0 ? 3 : (rating == 1 ? 4 : 4)
 
     return (
-        <Button 
-            className={ rating == 0 ? "btn-small" : (rating == 1 ? "btn-medium" : "btn-large")} 
+        <Button
+            className={ "btn-expandable " + (rating == 0 ? "btn-small" : (rating == 1 ? "btn-medium" : "btn-large"))}
             sx={{color: 'black', left: {left}, top: {top}}}
+            onClick={onClick}
         >
             <List className="role-list">
                 <ListItem className={ rating == 0 ? "list-item-small" : (rating == 1 ? "list-item-medium" : "list-item-large")}>
@@ -35,6 +37,5 @@ const CategoryButton = ({name, rating, roles, left, top} : ButtonProps) => {
         </Button>
     );
   }
-  
+
   export default CategoryButton;
-  

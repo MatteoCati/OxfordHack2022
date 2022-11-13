@@ -25,6 +25,23 @@ const SkillChip: FC<SkillChipProps> = ({skill, isMatched}) => {
     return <Chip label={skill} sx={chipStyle}/>
 }
 
+interface SkillsColumnProps {
+    requiredSkills: string[]
+    selectedSkills: string[]
+}
+
+const SkillsColumn: FC<SkillsColumnProps> = ({requiredSkills, selectedSkills}) => {
+    const columnStyle = {
+        display: "flex",
+        flexDirection: "column",
+    }
+    return <Box sx={columnStyle}>
+        {
+            requiredSkills.map(skill => <SkillChip skill={skill} isMatched={selectedSkills.includes(skill)}/>)
+        }
+    </Box>
+}
+
 interface MatchingSkillsProps {
     selectedSkills: string[]
     requiredSkills: string[]
@@ -34,9 +51,8 @@ const MatchingSkills: FC<MatchingSkillsProps> = ({selectedSkills, requiredSkills
 
     const skillsTableStyle = {
         display: "flex",
-        flexDirection: "column",
-        maxHeight: "375px",
-        flexWrap: "wrap",
+        flexDirection: "row",
+        justifyContent: "space-between",
     }
 
     const containerStyle = {
@@ -69,7 +85,7 @@ const MatchingSkills: FC<MatchingSkillsProps> = ({selectedSkills, requiredSkills
         <Box sx={horContainerStyle}>
             <Box sx={skillsTableStyle}>
                 {
-                    requiredSkills.map(skill => <SkillChip skill={skill} isMatched={selectedSkills.includes(skill)}/>)
+                    [0, 1, 2].map((idx: number) => <SkillsColumn requiredSkills={requiredSkills.filter((el: string, j: number) => j%3 === idx)} selectedSkills={selectedSkills}/>)
                 }
             </Box>
             <Box>

@@ -1,5 +1,6 @@
 import CategoryButton from './components/CategoryButton';
 import config from "./config"
+import RolesDialog from "./RolesDialog";
 import { FC, useEffect, useState } from "react";
 import { ICategory, Page } from './common';
 
@@ -9,6 +10,8 @@ interface GraphPageProps {
 
 const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
     const [categories, setCategories] = useState<ICategory[]>([])
+    const [dialogOpen, setDialogOpen] = useState<boolean>(false)
+    const [dialogContent, setDialogContent] = useState<ICategory>()
     const coordinates = [
         ["10%", "45%"], //small
         ["73%", "36%"], //small
@@ -29,6 +32,10 @@ const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
          })
      }, []);
 
+    const handleDialogClose = ()=> {
+        setDialogOpen(false)
+    }
+
     return (
       <div>
         {categories.map(category => {
@@ -39,9 +46,14 @@ const GraphPage: FC<GraphPageProps> = ({setCurrentPage}) => {
                 rating={Math.floor(counter/2)}
                 left={coordinates[counter][0]}
                 top={coordinates[counter][1]}
+                onClick={() => {
+                    setDialogContent(category)
+                    setDialogOpen(true)
+                }}
                 />
             );
         })}
+         <RolesDialog category={dialogContent!} open={dialogOpen} onClose={handleDialogClose}/>
       </div>
     );
   }
