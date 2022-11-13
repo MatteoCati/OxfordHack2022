@@ -19,7 +19,7 @@ const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps)
 
     return (
         <Button
-            className={ rating == 0 ? "btn-small" : (rating == 1 ? "btn-medium" : "btn-large")}
+            className={ "btn-expandable " + (rating == 0 ? "btn-small" : (rating == 1 ? "btn-medium" : "btn-large"))}
             sx={{color: 'black', left: {left}, top: {top}}}
             onClick={onClick}
         >
