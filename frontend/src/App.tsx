@@ -1,11 +1,11 @@
-import { Routes, Route } from "react-router-dom"
+import {Routes, Route, Link} from "react-router-dom"
 import HomePage from "./HomePage"
 import GraphPage from "./GraphPage"
 import RolePage from "./RolePage"
 import { useState } from "react";
 
 import "./App.css"
-import { AppBar, Link, Toolbar } from "@mui/material";
+import { AppBar } from "@mui/material";
 import config from "./config";
 import { Page } from "./common";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
@@ -20,11 +20,9 @@ function App() {
 
       <AppBar position="absolute" sx={{ backgroundColor: "transparent", boxShadow: "none", top: "0", }}>
         <Link
-          variant="h3"
           color="inherit"
-          href={currentPage == 1 ? "/" : "/graph"}
-          sx={{ textDecoration: "none" }}
-          display={currentPage == 0 ? "none" : undefined}
+          to={currentPage == 1 ? "/" : "/graph"}
+          style={{ textDecoration: "none", display:  currentPage == 0 ? "none" : undefined}}
         >
           <ArrowBackIosIcon sx={{ color: config.COLORS.PRIMARY, margin: "1rem", width: "2rem", height: "2rem" }} />
         </Link>
