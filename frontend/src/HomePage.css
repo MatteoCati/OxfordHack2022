@@ -10,3 +10,26 @@
 .title {
     color: #586F6B;
 }
+
+.header-style {
+    font-size: 3rem !important;
+    font-family: 'Segoe UI' !important;
+    text-transform: capitalize;
+    font-weight: 400 !important;
+    height: 40%;
+}
+
+.button-container {
+    display: flex;
+    min-height: 10rem;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.little-text {
+    font-size: 0.8rem !important;
+    width: 500px;
+    padding: 0 1rem;
+    margin: 0;
+    opacity: 90%;
+}

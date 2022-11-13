@@ -5,6 +5,7 @@ import config from "../config";
 import MatchingSkills from "./MatchingSkills"
 import HiringGraph from "./HiringGraph";
 import CompaniesList, {CompanyType} from "./CompaniesList";
+import { Page } from "../common";
 
 interface RoleType {
     id: number
@@ -18,13 +19,15 @@ interface RoleType {
 }
 
 interface RolePageProps {
-    selectedSkills: string[]
+    selectedSkills: string[],
+    setCurrentPage: (page: number) => void,
 }
 
-const  RolePage: FC<RolePageProps> = ({ selectedSkills }) => {
+const  RolePage: FC<RolePageProps> = ({ selectedSkills, setCurrentPage }) => {
     const [role, setRole] = useState<RoleType | null>(null)
     const {roleId} = useParams();
     useEffect(() => {
+        setCurrentPage(Page.ROLE)
         fetch(config.BACKEND_BASE_URL+"/role/"+roleId)
             .then(val => val.json())
             .then((data: RoleType) => {

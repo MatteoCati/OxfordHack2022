@@ -3,6 +3,7 @@ import Chip from "@mui/material/Chip"
 
 import "./SkillsBlock.css"
 import {Box, Typography} from "@mui/material";
+import config from "./config";
 
 
 interface SkillsBlockProps {
@@ -12,27 +13,23 @@ interface SkillsBlockProps {
 }
 
 const SkillsBlock: FC<SkillsBlockProps> = ({skills, onSkillSelected, defaultText=''}) => {
-    const containerStyle = {
-        border: "1px solid black",
-        borderRadius: "10px",
-        display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
-        padding: "20px",
-        width: "500px",
-        marginBottom: "10px",
-        justifyContent: "center",
+
+    const buttonStyle = {
+        '&:hover': {
+            backgroundColor: config.COLORS.ACCENT,
+        },
+        backgroundColor: config.COLORS.PRIMARY,
+        ml: "2px", 
+        mr: "2px",  
+        opacity: "90%"
     }
 
-    const defTextStyle = {
-        color: "#d4c8c7"
-    }
 
-    return <Box sx={containerStyle}>
+    return <Box className="container" sx={{ backgroundColor: config.COLORS.SECONDARY}}>
         { skills.length > 0 ?
-            skills.map(skill => (<Chip label={skill} sx={{ml: "2px", mr: "2px"}} onClick={() => onSkillSelected(skill)}/>))
+            skills.map(skill => (<Chip label={skill} sx={buttonStyle} onClick={() => onSkillSelected(skill)}/>))
             :
-            <Typography sx={defTextStyle}>{defaultText}</Typography>
+            <Typography sx={{color: config.COLORS.BACKGROUND}}>{defaultText}</Typography>
         }
     </Box>
 }
