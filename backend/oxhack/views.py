@@ -25,7 +25,7 @@ def get_skills_and_relevant_skills(request):
     all_skills = query_with_fetchall("SELECT * FROM oxhack_skills")
 
     frequent_skills = query_with_fetchall(
-        "SELECT skill FROM (SELECT skill, count(skill) FROM oxhack_skills GROUP BY skill ORDER BY count(skill) DESC LIMIT 5"
+        "SELECT skill FROM (SELECT skill, count(skill) FROM oxhack_role_skills GROUP BY skill ORDER BY count(skill) DESC LIMIT 5) AS TMP"
     )
 
     response = {}
@@ -72,12 +72,13 @@ def get_move(request):
     return Response(next_state.to_dict(), status=status.HTTP_200_OK)
 
 
-
 @api_view(["POST"])
 def save_score_view(request):
     """ask for a role (like software engineer) and return the data about the specific role"""
     role = request.data
 
-    role_data = query_with_fetchall("SELECT * FROM oxhack_roles WHERE role = {role}")
-    
-    return Response(role_data, status=status.HTTP_200_OK)
+    role_data = query_with_fetchall(
+        'SELECT * FROM oxhack_roles WHERE role = "{0}"'.format(role)
+    )
+
+    return Response(role_data[0], status=status.HTTP_200_OK)
