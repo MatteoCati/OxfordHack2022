@@ -1,10 +1,10 @@
 import {FC, useEffect, useState} from "react";
-import config from "./config"
+import config from "../config"
 import SkillsBlock from "./SkillsBlock";
 import {Typography, OutlinedInput, Button, Box} from "@mui/material"
-import "./HomePage.css"
+import "./HomePage.css";
 import { Link } from "react-router-dom";
-import { Page } from "./common";
+import { Page } from "../common";
 
 interface SkillsFetch {
     top_skills: string[]
@@ -27,7 +27,7 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
 
     useEffect(() => {
         setCurrentPage(Page.HOME)
-       fetch(config.BACKEND_BASE_URL + "/skills")
+        fetch(config.BACKEND_BASE_URL + "/skills")
            .then(jsonData => jsonData.json())
            .then((data: SkillsFetch) => {
                setSkills(data.skills)
@@ -39,14 +39,14 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
     const handleSearch = (ev: any) => {
         const newValue = ev.target.value ?? '';
         console.log(newValue)
-        setSearch(newValue);
+        setSearch(newValue)
         updateShownSkills(selectedSkills, newValue)
     }
 
     const updateShownSkills = (selected: string[], searchText: string) => {
         if(searchText === ''){
             setShownSkills(topSkills.filter(skill => !selected.includes(skill)))
-        }else{
+        } else {
             const lowerValue = searchText.toLowerCase()
             const matchingSkills = skills.filter(skill => skill.toLowerCase().includes(lowerValue) && !selected.includes(skill))
             setShownSkills(matchingSkills)
@@ -75,16 +75,9 @@ const HomePage: FC<HomePageProps> = ({selectedSkills, setSelectedSkills, setCurr
         borderRadius: "0.5rem !important",
     }
 
-    const containerStyle = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "flex-end",
-        paddingTop: "8rem",
-    }
 
     return (
-        <Box sx={containerStyle}>
+        <Box className="skills-container-style">
             <Typography variant={"h1"} className="header-style" sx={{color: config.COLORS.PRIMARY}}>FIND YOUR CAREER</Typography>
             <OutlinedInput placeholder={"Search your skills"} className="search" value={search} onChange={handleSearch} sx={{backgroundColor: config.COLORS.SECONDARY, color: config.COLORS.PRIMARY}}/>
             <SkillsBlock skills={shownSkills} onSkillSelected={addSkill} defaultText={'No skill available'} name="Top results:"/>

@@ -1,6 +1,7 @@
 import {FC} from "react";
-import {Box, Link, Typography} from "@mui/material";
+import {Box, Drawer, Link, Typography} from "@mui/material";
 import config from "../config";
+import "./CompaniesList.css"
 
 export interface CompanyType {
     name: string
@@ -9,20 +10,17 @@ export interface CompanyType {
 
 const CompanyCard: FC<{ company: CompanyType}> = ({company}) => {
 
-    const containerStyle = {
-        border: "1px solid black",
-        borderRadius: "10px",
-        marginBottom: "10px",
-        minWidth: "250px",
-        padding: "10px"
-    }
 
-    return <Box sx={containerStyle}>
+    return <Box className="company-card-container">
         <Typography sx={{fontSize: "1rem"}}>{company.name}</Typography>
-        <Link href={company.link} sx={{fontSize: "0.8rem", color: config.COLORS.LINK, textDecorationColor: config.COLORS.LINK}}>Click here to apply</Link>
+        <Link 
+            target="_blank"
+            href={company.link} 
+            sx={{fontSize: "0.8rem", color: config.COLORS.LINK, textDecorationColor: config.COLORS.LINK}}>
+                Click here to apply
+        </Link>
     </Box>
 }
-
 
 interface CompaniesListProps {
     companies: CompanyType[]
@@ -30,31 +28,35 @@ interface CompaniesListProps {
 
 const CompaniesList: FC<CompaniesListProps> = ({companies}) => {
 
-    const containerStyle = {
-        width: "100%",
-        marginTop: "2rem",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-    }
-
-    const companiesListStyle = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        width: "100%"
-    }
+    const drawerWidth = "20rem"
 
     return (
-        <Box sx={containerStyle}>
+        <Drawer
+                sx={{
+                    color: config.COLORS.BACKGROUND,
+                    width: drawerWidth,
+                    flexShrink: 0,
+                    '& .MuiDrawer-paper': {
+                        width: drawerWidth,
+                        boxSizing: 'border-box',
+                        backgroundColor: config.COLORS.PRIMARY,
+                        padding: "1rem",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                    },
+                }}
+                variant="permanent"
+                anchor="right"
+                aria-label="Suggestions of companies to apply to"
+            >
             <Typography className="side-bar-header">Some companies you can apply to:</Typography>
-            <Box sx={companiesListStyle}>
+            <Box className="companies-list-style">
                 {
                     companies.map((company: CompanyType, idx: number) => <CompanyCard company={company} key={idx}/>)
                 }
             </Box>
-
-        </Box>
+        </Drawer>
     )
 }
 

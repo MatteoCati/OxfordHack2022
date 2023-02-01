@@ -15,7 +15,7 @@
     width: 500px;
     justify-content: center;
     margin-bottom: 0.5rem;
-    min-height: 3.5rem;
+    min-height: 4rem;
 }
 
 .little-text {
@@ -23,5 +23,10 @@
     width: 500px;
     padding: 0 !important;
     margin-top: 0.2rem !important;
+    opacity: 90%;
+}
+
+.skill-button-style {
+    margin: 2px 3px !important;
     opacity: 90%;
 }

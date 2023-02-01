@@ -1,248 +1,219 @@
 {
   "skills": {
     "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "Haskell", "Machine Learning", "C#", "Sleeping", "Linux",
-    "Android", "Frontend", "Backend", "Design", "SQL", "git"],
+    "Android", "Frontend", "Backend", "Design", "SQL", "git", "React", "CSS", "adaptability", "communication", "teamwork"],
     "top_skills": ["JavaScript", "TypeScript", "Python", "Machine Learning"]
   },
   "role": [
     {
       "id": 1,
       "name": "Software Engineer",
-      "skills": ["JavaScript", "Java", "TypeScript", "Python", "Rust", "JavaScript", "Java", "TypeScript", "Python", "Rust"],
+      "skills": ["JavaScript", "Java", "TypeScript", "Python", "Backend", "Frontend", "React", "CSS", "teamwork", "SQL"],
       "graphX": ["Q1 2021", "Q2 2021", "Q3 2021", "Q4 2021", "Q1 2022", "Q2 2022"],
       "graphY": [100000, 200000, 400000, 800000, 720000, 700000],
       "gender": [0.60, 0.30, 0.10],
       "avgSalary": 175000,
       "companies": [
         {
+          "name": "Marshall Wace",
+          "link": "https://www.mwam.com/join-us/internships/"
+        },
+        {
           "name": "Google",
-          "link": "https://google.com"
+          "link": "https://careers.google.com/jobs/results/?company=Google&company=YouTube&employment_type=FULL_TIME&gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEGCaNPG9_KWhWQ5IBaFR_1rG3PHvjGCONRWr-O9J3nqRmR7hZepPsIaArZiEALw_wcB&gclsrc=aw.ds&hl=en_US&jlo=en_US&location=London,%20UK&location=Manchester,%20UK&q=&sort_by=relevance&src=Online%2FHouse%20Ads%2FBKWS_Cloud_EMEA"
         },
         {
           "name": "Microsoft",
-          "link": "https://google.com"
+          "link": "https://careers.microsoft.com/us/en"
         },
         {
           "name": "Amazon",
-          "link": "https://google.com"
+          "link": "https://amazon.force.com/BBJobDetails?Agency=1&isApply=1&reqid=a0R4U000009oKsMUAU&cmpid=SARUEU1201H9&gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEEqz_Fe1G9UB3wiR1mmLBx9WGqABYWBPhLNZV0CxshnqRBmZbILbRwaAjTFEALw_wcB"
+        },
+        {
+          "name": "Dell",
+          "link": "https://careers.microsoft.com/us/en"
+        },
+        {
+          "name": "Bloomberg",
+          "link": "https://careers.microsoft.com/us/en"
+        },
+        {
+          "name": "Nvidia",
+          "link": "https://careers.microsoft.com/us/en"
+        },
+        {
+          "name": "Apple",
+          "link": "https://careers.microsoft.com/us/en"
         }
+
       ]
     }
   ],
   "categories": [
       {
-        "name" : "tech",
+        "name" : "Technology",
         "percentage" : 90,
         "roles" : [
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
-          },
-          {
-            "id": 1,
-            "name": "cybersecurity",
+            "name": "Software Engineer",
             "percentage" : 80
           },
           {
             "id": 1,
-            "name": "IT support",
-            "percentage" : 70
-          },
-          {
-            "id": 1,
-            "name": "data analyst",
+            "name": "Frontend Developer",
             "percentage" : 75
           },
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
+            "name": "Cybersecurity",
+            "percentage" : 75
           },
           {
             "id": 1,
-            "name": "cybersecurity",
-            "percentage" : 80
-          },
-          {
-            "id": 1,
-            "name": "IT support",
+            "name": "IT Support",
             "percentage" : 70
           },
           {
             "id": 1,
-            "name": "data analyst",
-            "percentage" : 75
+            "name": "Data Analyst",
+            "percentage" : 50
+          },
+          {
+            "id": 1,
+            "name": "Machine Learning Engineer",
+            "percentage" : 50
+          },
+          {
+            "id": 1,
+            "name": "Graphic Designer",
+            "percentage" : 30
           }
         ]
       },
       {
-        "name" : "healthcare",
+        "name" : "Administration",
         "percentage": 70,
         "roles" : [
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
-          },
-          {
-            "id": 1,
-            "name": "cybersecurity",
-            "percentage" : 80
-          },
-          {
-            "id": 1,
-            "name": "IT support",
+            "name": "Secretary",
             "percentage" : 70
           },
           {
             "id": 1,
-            "name": "data analyst",
-            "percentage" : 75
-          }
-        ]
-      },
-      {
-        "name" : "healthcare",
-        "percentage": 70,
-        "roles" : [
-          {
-            "id": 1,
-            "name": "doctor",
-            "percentage" : 70
-          },
-          {
-            "id": 1,
-            "name": "nurse",
+            "name": "Manager",
             "percentage" : 60
           },
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
-          },
-          {
-            "id": 1,
-            "name": "cybersecurity",
-            "percentage" : 80
-          },
-          {
-            "id": 1,
-            "name": "IT support",
-            "percentage" : 70
-          },
-          {
-            "id": 1,
-            "name": "data analyst",
-            "percentage" : 75
-          }
-        ]
-      },
-      {
-        "name" : "healthcare",
-        "percentage": 70,
-        "roles" : [
-          {
-            "id": 1,
-            "name": "doctor",
-            "percentage" : 70
-          },
-          {
-            "id": 1,
-            "name": "nurse",
+            "name": "Administrator",
             "percentage" : 60
           },
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
-          },
-          {
-            "id": 1,
-            "name": "cybersecurity",
-            "percentage" : 80
-          },
-          {
-            "id": 1,
-            "name": "IT support",
-            "percentage" : 70
-          },
-          {
-            "id": 1,
-            "name": "data analyst",
-            "percentage" : 75
+            "name": "Development Officer",
+            "percentage" : 50
           }
         ]
       },
       {
-        "name" : "healthcare",
+        "name" : "Healthcare",
         "percentage": 70,
         "roles" : [
           {
             "id": 1,
-            "name": "doctor",
+            "name": "Nurse",
             "percentage" : 70
           },
           {
             "id": 1,
-            "name": "nurse",
+            "name": "Doctor",
             "percentage" : 60
           },
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
+            "name": "Assistant Nurse",
+            "percentage" : 60
           },
           {
             "id": 1,
-            "name": "cybersecurity",
-            "percentage" : 80
-          },
-          {
-            "id": 1,
-            "name": "IT support",
-            "percentage" : 70
-          },
-          {
-            "id": 1,
-            "name": "data analyst",
-            "percentage" : 75
+            "name": "Medic",
+            "percentage" : 50
           }
         ]
       },
       {
-        "name" : "healthcare",
+        "name" : "Finance",
         "percentage": 70,
         "roles" : [
           {
             "id": 1,
-            "name": "doctor",
+            "name": "Accountant",
             "percentage" : 70
           },
           {
             "id": 1,
-            "name": "nurse",
+            "name": "Actuary",
             "percentage" : 60
           },
           {
             "id": 1,
-            "name": "software developer",
-            "percentage" : 90
+            "name": "Quantitative Trader",
+            "percentage" : 50
           },
           {
             "id": 1,
-            "name": "cybersecurity",
-            "percentage" : 80
+            "name": "Data Analyst",
+            "percentage" : 40
           },
           {
             "id": 1,
-            "name": "IT support",
+            "name": "Market Analyst",
+            "percentage" : 30
+          }
+        ]
+      },
+      {
+        "name" : "Sales",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "Accountant",
             "percentage" : 70
           },
           {
             "id": 1,
-            "name": "data analyst",
-            "percentage" : 75
+            "name": "Salesman",
+            "percentage" : 60
+          },
+          {
+            "id": 1,
+            "name": "Bookmaker",
+            "percentage" : 50
+          }
+        ]
+      },
+      {
+        "name" : "Legal",
+        "percentage": 70,
+        "roles" : [
+          {
+            "id": 1,
+            "name": "Lawyer",
+            "percentage" : 70
+          },
+          {
+            "id": 1,
+            "name": "Barrister",
+            "percentage" : 60
+          },
+          {
+            "id": 1,
+            "name": "Bailif",
+            "percentage" : 90
           }
         ]
       }

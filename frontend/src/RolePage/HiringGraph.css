@@ -1,0 +1,9 @@
+.hiring-graph-container {
+    width: 100%;
+}
+
+.graph-title {
+    letter-spacing: 0.1rem !important; 
+    margin-top: 4rem !important;
+    margin-bottom: 2rem !important;
+}

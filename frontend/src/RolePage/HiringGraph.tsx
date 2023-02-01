@@ -11,6 +11,7 @@ import {Chart as ChartJS,
     Legend,
     Filler } from 'chart.js';
 import config from "../config";
+import "./HiringGraph.css";
 
 
 interface HiringGraphProps {
@@ -31,10 +32,6 @@ ChartJS.register(
 
 const HiringGraph: FC<HiringGraphProps> = ({graphX, graphY }) => {
 
-    const containerStyle = {
-        width: "100%",
-    }
-
     const data = {
         labels: graphX,
         datasets:
@@ -43,7 +40,7 @@ const HiringGraph: FC<HiringGraphProps> = ({graphX, graphY }) => {
                     fill: true,
                     label: 'Hiring',
                     data: graphY,
-                    borderColor: 'rgb(53, 162, 235)',
+                    borderColor: 'rgba(53, 162, 235)',
                     backgroundColor: 'rgba(53, 162, 235, 0.5)',
                 },
             ]
@@ -60,8 +57,8 @@ const HiringGraph: FC<HiringGraphProps> = ({graphX, graphY }) => {
         },
     };
 
-    return <Box sx={containerStyle}>
-        <Typography className="graph-title" sx={{color: config.COLORS.PRIMARY, letterSpacing: "0.1rem", marginTop: "4rem", marginBottom: "2rem"}}>See how many people are being hired</Typography>
+    return <Box className="hiring-graph-container">
+        <Typography className="graph-title" sx={{color: config.COLORS.PRIMARY}}>See how many people are being hired</Typography>
         <Line options={options} data={data} />
     </Box>
 }

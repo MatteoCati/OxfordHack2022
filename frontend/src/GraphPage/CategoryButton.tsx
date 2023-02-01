@@ -13,9 +13,10 @@ interface ButtonProps{
     onClick: () => void
 }
 
+// Round buttons with job categories and example roles
 const CategoryButton = ({name, rating, roles, left, top, onClick} : ButtonProps) => {
 
-
+    // Display up to 4 example roles in the button, depending on its size (rating)
     let counter = rating == 0 ? 3 : (rating == 1 ? 4 : 4)
 
     return (

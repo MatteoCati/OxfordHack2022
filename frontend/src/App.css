@@ -6,3 +6,20 @@
   min-height: 100vh;
   font-family: 'Segoe UI' !important;
 }
+
+.app-bar {
+  position: absolute !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  top: 0 !important;
+}
+
+.back-arrow {
+  margin: 1rem;
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+.back-arrow:hover {
+  opacity: 50%;
+}

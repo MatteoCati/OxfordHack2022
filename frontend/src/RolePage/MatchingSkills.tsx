@@ -7,7 +7,7 @@ import AnimatedProgressProvider from './AnimatedProgressProvider'
 // @ts-ignore
 import { easeQuadInOut } from "d3-ease";
 import config from "../config";
-import "./Role.css"
+import "./MatchingSkills.css"
 
 interface SkillChipProps {
     skill: string
@@ -15,15 +15,11 @@ interface SkillChipProps {
 }
 
 const SkillChip: FC<SkillChipProps> = ({skill, isMatched}) => {
-    const chipStyle = {
-        backgroundColor: isMatched ? "#308a15" : "#9c1315",
-        mb: "10px",
-        minHeight: "32px",
-        ml: "20px",
-        minWidth: "85px",
-    }
 
-    return <Chip label={skill} sx={chipStyle}/>
+    return <Chip 
+        label={skill} 
+        sx={{backgroundColor: isMatched ? "#308a15" : "#9c1315" }} 
+        className="skill-chip-style"/>
 }
 
 interface SkillsColumnProps {
@@ -50,33 +46,6 @@ interface MatchingSkillsProps {
 
 const MatchingSkills: FC<MatchingSkillsProps> = ({selectedSkills, requiredSkills}) => {
 
-    const skillsTableStyle = {
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "centre",
-        backgroundColor: config.COLORS.SECONDARY,
-        borderRadius: "1rem",
-        padding: "1rem 1rem 1rem 0",
-    }
-
-    const columnsTableStyle ={
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-    }
-
-    const containerStyle = {
-        width: "100%",
-        display: "flex",
-        flexDirection: "column"
-    }
-
-    const horContainerStyle = {
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-    }
-
     const matchesNumber = requiredSkills.filter(skill => selectedSkills.includes(skill)).length
     const percentage = matchesNumber / requiredSkills.length * 100
     const getPercentageColor = (value: number) => (value > 25
@@ -85,11 +54,11 @@ const MatchingSkills: FC<MatchingSkillsProps> = ({selectedSkills, requiredSkills
                             : "orange"
                             : "red")
 
-    return <Box sx={containerStyle}>
-        <Box sx={horContainerStyle}>
-            <Box sx={skillsTableStyle}>
+    return <Box className="skills-page-container">
+        <Box className="skills-and-graph-container">
+            <Box className="skills-table-style" sx={{backgroundColor: config.COLORS.SECONDARY}}>
                 <Typography className="skills-title" sx={{color: config.COLORS.PRIMARY, textTransform: "uppercase", textAlign: "center", padding: "0 0 0.5rem 1rem", letterSpacing: "0.1rem"}}>Required skills</Typography>
-                <Box sx={columnsTableStyle}>
+                <Box className="skills-columns-table-style" >
                     {
                         [0, 1, 2].map((idx: number) => <SkillsColumn requiredSkills={requiredSkills.filter((el: string, j: number) => j%3 === idx)} selectedSkills={selectedSkills}/>)
                     }
@@ -117,7 +86,6 @@ const MatchingSkills: FC<MatchingSkillsProps> = ({selectedSkills, requiredSkills
                     }}
                 </AnimatedProgressProvider>
             </Box>
-
         </Box>
     </Box>
 }

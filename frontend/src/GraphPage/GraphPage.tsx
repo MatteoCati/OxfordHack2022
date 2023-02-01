@@ -1,8 +1,8 @@
-import CategoryButton from './components/CategoryButton';
-import config from "./config"
+import CategoryButton from './CategoryButton';
+import config from "../config"
 import RolesDialog from "./RolesDialog";
 import { FC, useEffect, useState } from "react";
-import { ICategory, Page } from './common';
+import { ICategory, Page } from '../common';
 
 interface GraphPageProps {
     setCurrentPage: (page: number) => void,

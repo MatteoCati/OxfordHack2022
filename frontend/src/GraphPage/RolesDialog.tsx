@@ -1,7 +1,7 @@
 import {Box, Button, Dialog, DialogContent, DialogTitle, Typography} from "@mui/material";
 import {FC} from "react";
-import {ICategory, IRole} from "./common";
-import config from "./config";
+import {ICategory, IRole} from "../common";
+import config from "../config";
 import { useNavigate } from "react-router-dom";
 import "./RolesDialog.css"
 import WorkIcon from '@mui/icons-material/Work';
@@ -36,6 +36,7 @@ const RolesDialog: FC<RolesDialogProps> = ({open, onClose, category}) => {
         return <div></div>
     }
 
+    // don't move to css file - has to define in sx to work
     const paperProps = {
         minWidth: "40rem", 
         height: "32rem", 
